@@ -7,20 +7,20 @@
 import ol from 'openlayers';
 
 // Make classes available.
-import MapBaseLayersModel from './lib/base-layer/base-layers-model';
-export { MapBaseLayersModel };
+import SimpleLayerModel from './lib/models/simple-layer-model';
+export { SimpleLayerModel };
 
-import MapActiveBaseLayerView from './lib/base-layer/active-base-layers-view';
-export { MapActiveBaseLayerView };
+import SingleLayerModel from './lib/models/single-layer-model';
+export { SingleLayerModel };
 
-import MapDataLayerModelAdapter from './lib/data-layer/data-layer-model-adapter';
-export { MapDataLayerModelAdapter };
+import DataLayerStyleManager from './lib/styles/data-layer-style-manager';
+export { DataLayerStyleManager };
 
-import MapDataLayerView from './lib/data-layer/data-layer-view';
-export { MapDataLayerView };
+import DataLayerView from './lib/views/data-layer-view';
+export { DataLayerView };
 
-import StyleManager from './lib/data-layer/data-layer-style-manager';
-export { StyleManager };
+import TiledLayerView from './lib/views/tiled-layers-view';
+export { TiledLayerView };
 
 /**
  * Render the map with the specified `options`.
