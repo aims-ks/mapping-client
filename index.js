@@ -7,55 +7,20 @@
 import ol from 'openlayers';
 
 // Make classes available.
-import SimpleLayerModel from './lib/models/simple-layer-model';
-export { SimpleLayerModel };
+import MapClient from './lib/map-client';
+export { MapClient };
 
-import SingleLayerModel from './lib/models/single-layer-model';
-export { SingleLayerModel };
+import AbstractLegendBuilder from './lib/components/legend/abstract-legend-builder';
+export { AbstractLegendBuilder };
 
-import DataLayerStyleManager from './lib/styles/data-layer-style-manager';
-export { DataLayerStyleManager };
+import AbstractDynamicLayerStyleSelector from './lib/layers/dynamic/dynamic-layer-style-selector';
+export { AbstractDynamicLayerStyleSelector };
 
-import DataLayerView from './lib/views/data-layer-view';
-export { DataLayerView };
+import DynamicLayersFeatureSelector from './lib/layers/dynamic/dynamic-layers-feature-selector';
+export { DynamicLayersFeatureSelector };
 
-import TiledLayerView from './lib/views/tiled-layers-view';
-export { TiledLayerView };
+import DynamicLayersRenderManager from './lib/layers/dynamic/dynamic-layers-render-manager';
+export { DynamicLayersRenderManager };
 
-/**
- * Render the map with the specified `options`.
- *
- * @param options.target {string} The element ID in which to render the map. Default value is
- * `map`.
- * @param options.lon {number} The longitude on which to centre the map. Default value is `148.2`.
- * @param options.lat {number} The latitude on which to centre the map. Default value is `-17.8`.
- * @param options.zoom {int} The initial zoom of the map.
- * @returns {ol.Map} An OpenLayers `map` object for manipulation.
- */
-const render = function(options) {
-
-  // Set default values for the options if required.
-  options = options || {};
-
-  options.target = options.target || 'map';
-
-  options.lon = options.lon || 148.2;
-  options.lat = options.lat || -17.8;
-
-  options.zoom = options.zoom || 6;
-
-  // Render the map.
-  const map = new ol.Map({
-    target: options.target,
-    view: new ol.View({
-      projection: 'EPSG:4326',
-      center: [options.lon, options.lat],
-      zoom: options.zoom
-    })
-  });
-
-  return map;
-
-};
-
-export { render };
+import StaticLayersRenderManager from './lib/layers/static/static-layers-render-manager';
+export { StaticLayersRenderManager };

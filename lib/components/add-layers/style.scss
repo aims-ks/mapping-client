@@ -1,0 +1,55 @@
+#map-add-layer-modal {
+  .tab-content {
+    padding: 10px 0 0 0;
+  }
+  .aims-tree {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+}
+
+// Container.
+.aims-tree {
+
+  .aims-tree-item {
+    display: block;
+
+    &.branch {
+      padding-left: 10px;
+
+      & > span {
+        cursor: pointer;
+      }
+
+      &.open > span:before, &.closed > span:before {
+        font-family: "Material Icons";
+        font-size: 20px;
+        vertical-align: middle;
+      }
+      &.open > span:before {
+        content: "\e313";
+      }
+
+      &.closed > span:before {
+        content: "\e315";
+      }
+
+    }
+
+    &.leaf {
+      padding-left: 20px;
+
+      &.downloading {
+        font-style: italic;
+      }
+      &.download-success {
+        color: green;
+      }
+      &.download-failed {
+        color: red;
+      }
+    }
+
+  }
+
+}
