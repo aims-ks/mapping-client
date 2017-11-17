@@ -19,7 +19,8 @@
     "openlayers": "^4.4.2"
   },
   "dependencies": {
-    "events": "^1.1.1"
+    "events": "^1.1.1",
+    "uuid": "^3.1.0"
   },
   "browserify": {
     "transform": [
