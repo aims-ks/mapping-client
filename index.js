@@ -4,8 +4,6 @@
  * @module aims-map
  */
 
-import ol from 'openlayers';
-
 // Make classes available.
 import MapClient from './lib/map-client';
 export { MapClient };
