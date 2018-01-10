@@ -19,9 +19,7 @@ let plugins = [
 // Add an IgnorePlugin for each defined dependency.
 Object.keys(require('./package.json').dependencies)
   .forEach(lib => {
-    const val = `\\b${lib}\\b`;
-    console.log('ignore: ' + val);
-    plugins.push(new webpack.IgnorePlugin(new RegExp(val)));
+    plugins.push(new webpack.IgnorePlugin(new RegExp(`\\b${lib}\\b`)));
   });
 
 let outputFile;
