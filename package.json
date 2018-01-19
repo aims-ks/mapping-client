@@ -5,7 +5,9 @@
   "main": "./index.js",
   "scripts": {
     "lint": "node ./node_modules/eslint/bin/eslint.js ./index.js ./lib/**",
-    "build": "webpack --env.WEBPACK_ENV=build",
+    "build-alldeps": "webpack --env.WEBPACK_ENV=build --config webpack.config.all-deps.js",
+    "build-nodeps": "webpack --env.WEBPACK_ENV=build --config webpack.config.no-deps.js",
+    "build-withdeps": "webpack --env.WEBPACK_ENV=build --config webpack.config.with-deps.js",
     "dev": "webpack --env.WEBPACK_ENV=dev --progress --colors --watch"
   },
   "author": "Aaron Smith (asmith@aims.gov.au)",
