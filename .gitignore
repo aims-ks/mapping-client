@@ -1,10 +1,9 @@
 # IntelliJ files
 .idea/
-aims-map.iml
 
 # NPM files.
 package-lock.json
 node_modules/
 
-# Temporary files not for Git.
-ignore/
+# output
+build/

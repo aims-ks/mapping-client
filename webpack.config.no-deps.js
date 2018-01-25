@@ -5,6 +5,7 @@ const webpack = require('webpack');
 const factory = require('./webpack.config.factory');
 
 let config = factory({
+  filename: 'aims-map-nodeps.js',
   libraryName: 'aims-map-nodeps'
 });
 
