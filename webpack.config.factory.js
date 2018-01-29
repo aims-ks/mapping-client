@@ -7,7 +7,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const OUTPUT_DIRECTORY = 'build';
 
 // Function to generate the config.
-module.exports = function(options) {
+module.exports = function (options) {
 
 // Default plugins, simply clear the output directory unless overridden.
   let plugins = [];
@@ -42,6 +42,25 @@ module.exports = function(options) {
           test: /(\.jsx|\.js)$/,
           loader: 'babel-loader',
           exclude: /(node_modules|bower_components)/
+        },
+        // SASS/CSS.
+        {
+          test: /\.scss$/,
+          use: [{
+            loader: 'style-loader' // creates style nodes from JS strings
+          }, {
+            loader: 'css-loader' // translates CSS into CommonJS
+          }, {
+            loader: 'sass-loader' // compiles Sass to CSS
+          }]
+        },
+        {
+          test: /.(png|woff(2)?|eot|ttf|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+          loader: 'url-loader?limit=100000'
+        },
+        {
+          test: /\.txt$/,
+          use: 'raw-loader'
         }
       ]
     },
@@ -66,4 +85,4 @@ module.exports = function(options) {
 
   return config;
 
-}
+};

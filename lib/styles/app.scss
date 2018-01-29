@@ -1,0 +1,5 @@
+// Only import SASS files. Add any CSS files to the gulpfile.js
+
+// Boostrap as the standard CSS framework.
+$icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
+@import '~bootstrap-sass/assets/stylesheets/_bootstrap.scss';

@@ -22,3 +22,6 @@ export { DynamicLayersRenderManager };
 
 import StaticLayersRenderManager from './lib/layers/static/static-layers-render-manager';
 export { StaticLayersRenderManager };
+
+// Include basic CSS
+import './lib/styles/app.scss'
