@@ -2,7 +2,11 @@
 
 // Boostrap as the standard CSS framework.
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
-@import '~bootstrap-sass/assets/stylesheets/_bootstrap.scss';
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/_variables';
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/_mixins';
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/_navs';
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/_buttons';
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/_modals.scss';
 
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
