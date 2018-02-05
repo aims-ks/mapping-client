@@ -9,10 +9,17 @@ const OUTPUT_DIRECTORY = 'build';
 // Function to generate the config.
 module.exports = function (options) {
 
-// Default plugins, simply clear the output directory unless overridden.
+  // Default plugins, simply clear the output directory unless overridden.
   let plugins = [];
   if (options.hasOwnProperty('cleanOutputDirectory') && !options.cleanOutputDirectory) {
     plugins.push(new CleanWebpackPlugin([OUTPUT_DIRECTORY]));
+  }
+  if (options.hasOwnProperty('providePlugins') && options.providePlugins) {
+    plugins.push(new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
+      ol: "ol"
+    }));
   }
 
   // Define the output name.
@@ -45,7 +52,7 @@ module.exports = function (options) {
         },
         // SASS/CSS.
         {
-          test: /\.scss$/,
+          test: /\.scss$|\.css$/,
           use: [{
             loader: 'style-loader' // creates style nodes from JS strings
           }, {
@@ -72,7 +79,8 @@ module.exports = function (options) {
     },
 
     // Add plugins.
-    plugins: plugins
+    plugins: plugins,
+    devtool: 'source-map'
   };
 
   // Generate source maps be default, unless 'sourceMaps' specified as 'false' in 'options'.

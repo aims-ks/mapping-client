@@ -2,8 +2,10 @@
 const factory = require('./webpack.config.factory');
 
 let config = factory({
+  entryPoint: __dirname + '/index-all-deps.js',
   filename: 'aims-map-alldeps.js',
-  libraryName: 'aimsMap'
+  libraryName: 'aimsMap',
+  providePlugins: true
 });
 
 module.exports = config;
