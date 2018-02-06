@@ -11,7 +11,151 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import './../components/add-layers/style.scss';
 
 // Sizes of Material icons from Google.
-.material-icons.md-18 { font-size: 18px; }
-.material-icons.md-24 { font-size: 24px; }
-.material-icons.md-36 { font-size: 36px; }
-.material-icons.md-48 { font-size: 48px; }
+.material-icons.md-18 {
+  font-size: 18px;
+}
+
+.material-icons.md-24 {
+  font-size: 24px;
+}
+
+.material-icons.md-36 {
+  font-size: 36px;
+}
+
+.material-icons.md-48 {
+  font-size: 48px;
+}
+
+/***************************
+	AIMS
+***************************/
+
+/*
+  AIMS standard styling.
+
+  SECTION
+
+  <div class="aims-section">
+      <div class="aims-section-header">
+          <span class="aims-title">
+              Section Title
+          </span>
+          <div class="aims-actions">
+              <button type="button" id="add-layer-button" class="btn btn-link">
+                  <i class="material-icons md-18">add</i>
+              </button>
+          </div>
+      </div>
+      <div class="aims-section-content">
+      </div>
+  </div>
+  ------------------
+  | Title        + |
+  |----------------|
+  | Content        |
+  |                |
+  ------------------
+*/
+
+.aims-section .aims-section-header {
+  display: flex;
+
+  .aims-title {
+    flex-shrink: 1;
+    flex-grow: 1;
+  }
+
+  .aims-actions {
+    flex-shrink: 0;
+    flex-grow: 0;
+  }
+
+  .aims-actions button.btn-link {
+    padding: 0;
+    border: none;
+    line-height: 0;
+  }
+}
+
+/*
+  AIMS section using styling of Bootstrap popover.
+*/
+.aims-section-default {
+
+  .aims-section-header {
+    border-bottom: 1px solid #ddd;
+    background: #f5f5f5;
+    padding: 10px 15px;
+
+    .aims-title {
+      font-size: 1.2em;
+    }
+  }
+  .aims-section-content {
+    padding: 15px;
+
+    p {
+      margin: 0;
+    }
+  }
+}
+
+/*
+  Modal box overrides
+*/
+#aims-map-add-layer-modal ul.nav {
+  margin-top: 0;
+}
+
+#aims-map-add-layer-modal .tab-content {
+  margin-top: 15px;
+}
+
+/*
+ Legend
+ */
+
+.aims-map-legend {
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  padding: 5px;
+  max-height: 85%;
+  overflow-y: auto;
+  background-color: white;
+  border-radius: 4px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #000000;
+
+  img {
+    max-width: 100%;
+  }
+}
+
+/*
+  Layer dialog
+ */
+.aims-map-show-layers-dialog {
+  position: absolute;
+  top: 0.5em;
+  left: 3em;
+  border: 1px solid lightgray;
+  background: white;
+
+  .overlay-layers-list,
+  .base-layers-list {
+    list-style-type: none;
+    padding-left: 20px;
+  }
+}
+
+/*
+  Custom ol controls
+*/
+.aims-map-show-layers-button {
+  position: absolute;
+  left: 0.5em;
+  top: 4.5em;
+}
