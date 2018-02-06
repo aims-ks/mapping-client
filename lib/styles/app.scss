@@ -129,9 +129,23 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   border-style: solid;
   border-color: #000000;
 
+  .controls {
+    position: relative;
+
+    button {
+      float: right;
+    }
+  }
+
   img {
     max-width: 100%;
   }
+}
+
+.aims-map-legend-icon {
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
 }
 
 /*
