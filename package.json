@@ -5,10 +5,10 @@
   "main": "./index.js",
   "scripts": {
     "lint": "node ./node_modules/eslint/bin/eslint.js ./index.js ./lib/**",
-    "build-alldeps": "webpack --display=verbose --env.WEBPACK_ENV=build --config webpack.config.all-deps.js",
+    "build-alldeps": "webpack --env.WEBPACK_ENV=build --config webpack.config.all-deps.js",
     "build-nodeps": "webpack --env.WEBPACK_ENV=build --config webpack.config.no-deps.js",
     "build-withdeps": "webpack --env.WEBPACK_ENV=build --config webpack.config.with-deps.js",
-    "dev": "webpack --env.WEBPACK_ENV=dev --progress --colors --watch"
+    "dev-all-deps": "webpack --env.WEBPACK_ENV=dev --progress --colors --watch --config webpack.config.all-deps.js"
   },
   "author": "Aaron Smith (asmith@aims.gov.au)",
   "license": "CC-BY-4.0",

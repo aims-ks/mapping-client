@@ -80,7 +80,10 @@ module.exports = function (options) {
 
     // Add plugins.
     plugins: plugins,
-    devtool: 'source-map'
+    devtool: 'source-map',
+    watchOptions: {
+      ignored: '/node_modules/'
+    }
   };
 
   // Generate source maps be default, unless 'sourceMaps' specified as 'false' in 'options'.
