@@ -11,20 +11,8 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import './../components/add-layers/style.scss';
 
 // Sizes of Material icons from Google.
-.material-icons.md-18 {
-  font-size: 18px;
-}
-
-.material-icons.md-24 {
-  font-size: 24px;
-}
-
-.material-icons.md-36 {
-  font-size: 36px;
-}
-
-.material-icons.md-48 {
-  font-size: 48px;
+.material-icons {
+  font-size: inherit;
 }
 
 /***************************
@@ -43,7 +31,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
           </span>
           <div class="aims-actions">
               <button type="button" id="add-layer-button" class="btn btn-link">
-                  <i class="material-icons md-18">add</i>
+                  <i class="material-icons">add</i>
               </button>
           </div>
       </div>
