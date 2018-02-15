@@ -103,6 +103,11 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 /*
  Legend
  */
+.aims-map-legend-icon {
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+}
 
 .aims-map-legend {
   position: absolute;
@@ -110,6 +115,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   right: 0.5em;
   padding: 5px;
   max-height: 85%;
+  max-width: 250px;
   overflow-y: auto;
   background-color: white;
   border-radius: 4px;
@@ -126,15 +132,17 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
     }
   }
 
+  .legend-item {
+    margin: 0 2em 5px 1px;
+
+    .legend-title {
+      margin-bottom: 5px;
+    }
+  }
+
   img {
     max-width: 100%;
   }
-}
-
-.aims-map-legend-icon {
-  position: absolute;
-  top: 0.5em;
-  right: 0.5em;
 }
 
 /*
