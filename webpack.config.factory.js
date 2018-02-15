@@ -80,7 +80,6 @@ module.exports = function (options) {
 
     // Add plugins.
     plugins: plugins,
-    devtool: 'source-map',
     watchOptions: {
       ignored: '/node_modules/'
     }
