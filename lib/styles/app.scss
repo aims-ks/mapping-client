@@ -8,6 +8,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
+@import './../components/user-interface/style.scss';
 @import './../components/add-layers/style.scss';
 
 // Sizes of Material icons from Google.
@@ -103,34 +104,11 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 /*
  Legend
  */
-.aims-map-legend-icon {
-  position: absolute;
-  top: 0.5em;
-  right: 0.5em;
-}
-
 .aims-map-legend {
-  position: absolute;
-  top: 0.5em;
-  right: 0.5em;
   padding: 5px;
   max-height: 85%;
   max-width: 250px;
   overflow-y: auto;
-  background-color: white;
-  border-radius: 4px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #000000;
-  z-index: 1;
-
-  .controls {
-    position: relative;
-
-    button {
-      float: right;
-    }
-  }
 
   .legend-item {
     margin: 0 2em 5px 1px;
@@ -160,17 +138,4 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
     list-style-type: none;
     padding-left: 20px;
   }
-}
-
-/*
-  Custom ol controls
-*/
-.aims-map-show-layers-button {
-  position: absolute;
-  left: 0.5em;
-  top: 4.5em;
-}
-
-.ol-touch .aims-map-show-layers-button {
-  top: 5.5em;
 }

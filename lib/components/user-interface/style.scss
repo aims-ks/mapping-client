@@ -1,0 +1,69 @@
+$ui-default-margin: 5px;
+
+.aims-map-ui-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  pointer-events: none;
+
+  .aims-map-side-bar {
+    position: relative;
+    margin: $ui-default-margin;
+    width: 250px;
+    overflow: auto;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 4px;
+    padding: 2px;
+    pointer-events: auto;
+
+    display: none;
+
+    div {
+      background-color: #ffffff;
+      border: none;
+      border-radius: 2px;
+    }
+
+    &.left {
+      float: left;
+      margin-right: 0;
+    }
+
+    &.right {
+      float: right;
+      margin-left: -$ui-default-margin;
+    }
+  }
+
+  .aims-map-controls-container {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+
+    .aims-map-controls-panel {
+      position: absolute;
+      top: $ui-default-margin;
+
+      &.left {
+        left: $ui-default-margin;
+      }
+
+      &.right {
+        right: $ui-default-margin;
+      }
+
+      .ol-control {
+        position: unset;
+        margin-bottom: 3px;
+        pointer-events: auto;
+
+        &.active {
+          button {
+            background-color: rgba(0, 60, 136, 0.7);
+          }
+        }
+      }
+    }
+  }
+}
