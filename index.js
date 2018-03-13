@@ -14,8 +14,15 @@ export { AbstractLegendBuilder };
 import AbstractDynamicLayerStyleSelector from './lib/layers/dynamic/dynamic-layer-style-selector';
 export { AbstractDynamicLayerStyleSelector };
 
-import DynamicLayersFeatureSelector from './lib/layers/dynamic/dynamic-layers-feature-selector';
-export { DynamicLayersFeatureSelector };
+import {
+  DynamicLayersFeatureSelector,
+  AccumulatingDynamicLayersFeatureSelector,
+  ToggleDynamicLayersFeatureSelector
+} from "./lib/layers/dynamic/dynamic-layers-feature-selector";
+export {
+  AccumulatingDynamicLayersFeatureSelector,
+  ToggleDynamicLayersFeatureSelector
+};
 
 import DynamicLayersRenderManager from './lib/layers/dynamic/dynamic-layers-render-manager';
 export { DynamicLayersRenderManager };
