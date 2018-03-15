@@ -156,6 +156,20 @@ $blue:    #337ab7 !default;
     list-style-type: none;
     padding-left: 20px;
   }
+
+  .overlay-layers-list {
+    li {
+      padding: 0 4px;
+      &:hover {
+        background: $gray-200;
+        cursor: pointer;
+      }
+
+      .dragging {
+        opacity: 0.4;
+      }
+    }
+  }
 }
 
 /*
