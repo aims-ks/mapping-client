@@ -159,10 +159,38 @@ $blue:    #337ab7 !default;
 
   .overlay-layers-list {
     li {
-      padding: 0 4px;
+      position: relative;
+      padding: 0 1.8em 0 4px;
+
+      .layer-drag-handle {
+        padding: 0 2px;
+        margin-left: -24px;
+        cursor: pointer;
+      }
+
+      .aims-map-layer-settings-button {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 1px 4px 1px 0;
+
+        &.active {
+          display: block;
+        }
+      }
+
+      .aims-map-layer-settings {
+        display: none;
+        padding: 4px;
+      }
+
       &:hover {
         background: $gray-200;
-        cursor: pointer;
+
+        .aims-map-layer-settings-button {
+          display: block;
+        }
       }
 
       .dragging {
