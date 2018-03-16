@@ -28,6 +28,9 @@ module.exports = function (options) {
   // Allow for overriding the default entry point.
   let entryPoint = (options.entryPoint ? options.entryPoint : __dirname + '/index.js');
 
+  // Allow for overriding the provision of external libraries.
+  let externals = (options.externals ? options.externals : {});
+
   let config = {
 
     // Entry point.
@@ -41,6 +44,9 @@ module.exports = function (options) {
       libraryTarget: options.libraryTarget || 'umd',
       umdNamedDefine: !!options.umdNamedDefine
     },
+
+    // Provision of external libraries
+    externals: externals,
 
     // Default rule: transpile everything except contents of 'node_modules' and 'bower_components'.
     module: {
