@@ -17,8 +17,6 @@ $ui-default-margin: 5px;
     padding: 2px;
     pointer-events: auto;
 
-    display: none;
-
     div {
       background-color: #ffffff;
       border: none;
@@ -27,12 +25,47 @@ $ui-default-margin: 5px;
 
     &.left {
       float: left;
-      margin-right: 0;
     }
 
     &.right {
       float: right;
-      margin-left: -$ui-default-margin;
+    }
+
+    .aims-map-tab-bar {
+      ul.control-tabs {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        background: #ffffff;
+
+        display: flex;
+        justify-content: flex-start;
+
+        li {
+          font-size: 0.8em;
+          flex: 1 1 0;
+          border-left: 4px solid;
+
+          &:first-child {
+            border-left: 0;
+          }
+
+          .material-icons {
+            vertical-align: middle !important;
+            padding-bottom: 3px;
+            font-size: 1.5em;
+          }
+
+          a {
+            text-decoration: none;
+            padding: 5px 2px 2px ;
+            text-align: center;
+            display: block;
+          }
+
+        }
+      }
     }
   }
 
@@ -57,6 +90,10 @@ $ui-default-margin: 5px;
         position: unset;
         margin-bottom: 3px;
         pointer-events: auto;
+
+        span.title {
+          display: none;
+        }
 
         &.active {
           button {
