@@ -156,6 +156,53 @@ $blue:    #337ab7 !default;
     list-style-type: none;
     padding-left: 20px;
   }
+
+  .overlay-layers-list {
+    li {
+      position: relative;
+      padding: 0 1.8em 0 4px;
+
+      .layer-drag-handle {
+        padding: 0 2px;
+        margin-left: -26px;
+        margin-right: 2px;
+        cursor: pointer;
+      }
+
+      input[type='checkbox'] {
+        margin-left: 2px;
+      }
+
+      .aims-map-layer-settings-button {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 1px 4px;
+      }
+
+      .aims-map-layer-settings {
+        display: none;
+        padding: 4px;
+
+        input::-ms-tooltip {
+          display: none;
+        }
+      }
+
+      &:hover {
+        background: $gray-200;
+
+        .aims-map-layer-settings-button {
+          display: block;
+        }
+      }
+
+      .dragging {
+        opacity: 0.4;
+      }
+    }
+  }
 }
 
 /*
