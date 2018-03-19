@@ -6,12 +6,13 @@ const factory = require('./webpack.config.factory');
 let config = factory({
   libraryName: 'aimsMap',
   filename: 'aims-map-withdeps.js',
-  umdNamedDefine: true
+  umdNamedDefine: true,
+  externals: {
+    jquery: 'jQuery'
+  }
 });
 
-console.log('output: ' + JSON.stringify(config.output));
-// Add an IgnorePlugin for OpenLayers and jQuery.
+// Add an IgnorePlugin for OpenLayers.
 config.plugins.push(new webpack.IgnorePlugin(new RegExp(`\\bol\\b`)));
-config.plugins.push(new webpack.IgnorePlugin(new RegExp(`\\bjquery\\b`)));
 
 module.exports = config;

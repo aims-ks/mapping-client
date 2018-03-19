@@ -1,10 +1,6 @@
 // Boostrap as the standard CSS framework.
-$icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
-@import '~bootstrap-sass/assets/stylesheets/bootstrap/_variables';
-@import '~bootstrap-sass/assets/stylesheets/bootstrap/_mixins';
-@import '~bootstrap-sass/assets/stylesheets/bootstrap/_navs';
-@import '~bootstrap-sass/assets/stylesheets/bootstrap/_buttons';
-@import '~bootstrap-sass/assets/stylesheets/bootstrap/_modals.scss';
+$blue:    #337ab7 !default;
+@import '~bootstrap/scss/bootstrap';
 
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
@@ -137,5 +133,52 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   .base-layers-list {
     list-style-type: none;
     padding-left: 20px;
+  }
+
+  .overlay-layers-list {
+    li {
+      position: relative;
+      padding: 0 1.8em 0 4px;
+
+      .layer-drag-handle {
+        padding: 0 2px;
+        margin-left: -26px;
+        margin-right: 2px;
+        cursor: pointer;
+      }
+
+      input[type='checkbox'] {
+        margin-left: 2px;
+      }
+
+      .aims-map-layer-settings-button {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 1px 4px;
+      }
+
+      .aims-map-layer-settings {
+        display: none;
+        padding: 4px;
+
+        input::-ms-tooltip {
+          display: none;
+        }
+      }
+
+      &:hover {
+        background: $gray-200;
+
+        .aims-map-layer-settings-button {
+          display: block;
+        }
+      }
+
+      .dragging {
+        opacity: 0.4;
+      }
+    }
   }
 }
