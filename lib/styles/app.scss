@@ -184,6 +184,10 @@ $blue:    #337ab7 !default;
       .aims-map-layer-settings {
         display: none;
         padding: 4px;
+
+        input::-ms-tooltip {
+          display: none;
+        }
       }
 
       &:hover {
