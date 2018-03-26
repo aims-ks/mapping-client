@@ -29,6 +29,12 @@ $ui-default-spacing: 5px;
     &.right {
       float: right;
     }
+
+    button.btn-link {
+      padding: 0;
+      border: none;
+      line-height: 0;
+    }
   }
 
   .aims-map-controls-container {
