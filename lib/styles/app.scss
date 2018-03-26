@@ -75,6 +75,7 @@ $blue:    #337ab7 !default;
 
     .aims-title {
       font-size: 1.2em;
+      font-weight: 500;
     }
   }
   .aims-section-content {
@@ -101,7 +102,6 @@ $blue:    #337ab7 !default;
  Legend
  */
 .aims-map-legend {
-  padding: 5px;
   max-height: 85%;
   max-width: 250px;
   overflow-y: auto;
@@ -122,12 +122,7 @@ $blue:    #337ab7 !default;
 /*
   Layer dialog
  */
-.aims-map-show-layers-dialog {
-  position: absolute;
-  top: 0.5em;
-  left: 3em;
-  border: 1px solid lightgray;
-  background: white;
+.aims-map-show-layers-dialog-content {
 
   .overlay-layers-list,
   .base-layers-list {

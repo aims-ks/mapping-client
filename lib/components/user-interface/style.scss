@@ -1,3 +1,4 @@
+$ui-default-spacing: 5px;
 
 .aims-map-ui-container {
   position: absolute;
@@ -8,7 +9,7 @@
 
   .aims-map-side-bar {
     position: relative;
-    width: 250px;
+    width: 350px;
     height: 100%;
     overflow: auto;
     background-color: #ffffff;
@@ -38,7 +39,7 @@
 
     .aims-map-controls-panel {
       position: absolute;
-      top: 5px;
+      top: $ui-default-spacing;
 
       &.left {
         left: 0;
@@ -70,8 +71,14 @@
 
       .ol-control {
         position: unset;
-        margin-bottom: 3px;
+        margin-bottom: $ui-default-spacing;
         pointer-events: auto;
+
+        button {
+          font-size: 1.3em;
+          height: 1.675em;
+          width: 1.675em;
+        }
 
         &.active {
           button {
