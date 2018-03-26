@@ -1,4 +1,3 @@
-$ui-default-margin: 5px;
 
 .aims-map-ui-container {
   position: absolute;
@@ -9,30 +8,25 @@ $ui-default-margin: 5px;
 
   .aims-map-side-bar {
     position: relative;
-    margin: $ui-default-margin;
     width: 250px;
+    height: 100%;
     overflow: auto;
-    background-color: rgba(255, 255, 255, 0.4);
-    border-radius: 4px;
+    background-color: #ffffff;
     padding: 2px;
     pointer-events: auto;
 
     display: none;
 
     div {
-      background-color: #ffffff;
       border: none;
-      border-radius: 2px;
     }
 
     &.left {
       float: left;
-      margin-right: 0;
     }
 
     &.right {
       float: right;
-      margin-left: -$ui-default-margin;
     }
   }
 
@@ -40,17 +34,38 @@ $ui-default-margin: 5px;
     position: relative;
     height: 100%;
     overflow: hidden;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 
     .aims-map-controls-panel {
       position: absolute;
-      top: $ui-default-margin;
+      top: 5px;
 
       &.left {
-        left: $ui-default-margin;
+        left: 0;
+
+        .ol-control {
+          border-radius: 0 4px 4px 0;
+          padding: 2px 2px 2px 0;
+
+          button {
+            margin: 1px 1px 1px 0;
+            border-radius: 0 2px 2px 0;
+          }
+        }
       }
 
       &.right {
-        right: $ui-default-margin;
+        right: 0;
+
+        .ol-control {
+          border-radius: 4px 0 0 4px;
+          padding: 2px 0 2px 2px;
+
+          button {
+            margin: 1px 0 1px 1px;
+            border-radius: 2px 0 0 2px;
+          }
+        }
       }
 
       .ol-control {
