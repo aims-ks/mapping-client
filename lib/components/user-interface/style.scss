@@ -18,8 +18,17 @@ $ui-default-spacing: 5px;
 
     display: none;
 
+    i.material-icons {
+      vertical-align: text-bottom;
+    }
+
     @include media-breakpoint-up(md) {
       width: 350px;
+
+      i.material-icons {
+        font-size: 18px;
+        line-height: 24px;
+      }
     }
 
     div {
@@ -38,13 +47,6 @@ $ui-default-spacing: 5px;
       padding: 0;
       margin-left: $ui-default-spacing;
       border: none;
-      line-height: 0;
-
-      @include media-breakpoint-up(md) {
-        i.material-icons {
-          font-size: 18px;
-        }
-      }
     }
   }
 
