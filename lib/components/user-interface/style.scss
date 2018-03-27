@@ -32,6 +32,7 @@ $ui-default-spacing: 5px;
 
     button.btn-link {
       padding: 0;
+      margin-left: $ui-default-spacing;
       border: none;
       line-height: 0;
     }
