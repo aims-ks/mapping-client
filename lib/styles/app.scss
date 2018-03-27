@@ -7,6 +7,10 @@ $blue:    #337ab7 !default;
 @import './../components/user-interface/style.scss';
 @import './../components/add-layers/style.scss';
 
+button {
+  cursor: pointer;
+}
+
 /***************************
 	AIMS
 ***************************/
