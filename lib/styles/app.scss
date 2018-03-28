@@ -189,20 +189,21 @@ $blue:    #337ab7 !default;
           display: none;
         }
       }
-
-      &:hover {
-        background: $gray-200;
-
-        .aims-map-layer-settings-button {
-          display: block;
-        }
-      }
-
-      .dragging {
-        opacity: 0.4;
-      }
     }
   }
+}
+
+/*
+  Sortable list
+ */
+.sortable-ghost {
+  background: $gray-200;
+  opacity: .5;
+}
+
+.sortable-drag {
+  opacity: 1;
+  background: #ffffff;
 }
 
 /*
