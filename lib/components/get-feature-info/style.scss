@@ -1,0 +1,36 @@
+.aims-map-ui-container .aims-map-side-bar div.aims-map-get-features-container {
+  border-bottom: 1px dashed $gray-300;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  overflow: auto;
+
+  .aims-map-get-feature-info-title {
+    margin-bottom: 5px;
+
+    button {
+      margin: 0;
+      width: 100%;
+      white-space: initial;
+      text-align: left;
+      display: block;
+
+      i {
+        float: right;
+      }
+    }
+  }
+
+  .aims-map-get-feature-info-content {
+    .loading {
+      text-align: center;
+    }
+  }
+}
+
+.ol-viewport.get-features-activated {
+  cursor: help;
+
+  .aims-map-side-bar {
+    cursor: auto;
+  }
+}
