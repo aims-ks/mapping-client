@@ -54,11 +54,13 @@ $ui-default-spacing: 5px;
     position: absolute;
     left: 400px;
     right: 400px;
+    max-height: 100%;
     background: #ffffff;
     opacity: 0.8;
     pointer-events: auto;
 
-    //display: none;
+    display: none;
+    flex-direction: row;
 
     &.top {
       top: 0;
@@ -66,6 +68,11 @@ $ui-default-spacing: 5px;
 
     &.bottom {
       bottom: 0;
+    }
+
+    button.btn-link {
+      padding: 0;
+      border: none;
     }
 
     .aims-section-header {
@@ -80,17 +87,17 @@ $ui-default-spacing: 5px;
 
     .aims-section-content {
       display: inline-block;
+      flex: 1;
       padding: $ui-default-spacing 2*$ui-default-spacing $ui-default-spacing $ui-default-spacing;
-    }
-
-    button.btn-link {
-      padding: 0.25rem 0.75rem;
-      border: none;
+      overflow-y: auto;
     }
 
     .aims-actions {
-      float: right;
       width: auto;
+
+      button.btn-link {
+        padding: 0.25rem 0.75rem;
+      }
 
       @include media-breakpoint-up(md) {
 
