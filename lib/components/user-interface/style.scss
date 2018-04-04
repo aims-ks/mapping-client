@@ -50,6 +50,58 @@ $ui-default-spacing: 5px;
     }
   }
 
+  .aims-map-row-panel {
+    position: absolute;
+    left: 400px;
+    right: 400px;
+    background: #ffffff;
+    opacity: 0.8;
+    pointer-events: auto;
+
+    //display: none;
+
+    &.top {
+      top: 0;
+    }
+
+    &.bottom {
+      bottom: 0;
+    }
+
+    .aims-section-header {
+      display: inline-block;
+      padding: $ui-default-spacing $ui-default-spacing $ui-default-spacing 2*$ui-default-spacing;
+      border: 0;
+
+      .aims-title {
+        font-size: 1em;
+      }
+    }
+
+    .aims-section-content {
+      display: inline-block;
+      padding: $ui-default-spacing 2*$ui-default-spacing $ui-default-spacing $ui-default-spacing;
+    }
+
+    button.btn-link {
+      padding: 0.25rem 0.75rem;
+      border: none;
+    }
+
+    .aims-actions {
+      float: right;
+      width: auto;
+
+      @include media-breakpoint-up(md) {
+
+        i.material-icons {
+          font-size: 18px;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+
   .aims-map-controls-container {
     position: relative;
     height: 100%;
