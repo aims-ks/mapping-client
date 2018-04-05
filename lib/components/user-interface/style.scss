@@ -9,6 +9,42 @@ $ui-default-spacing: 5px;
   display: flex;
   justify-content: space-between;
 
+  .aims-section {
+    .aims-section-header {
+      display: flex;
+      flex: 0 0 auto;
+      border-bottom: 1px solid #ddd;
+      background: $gray-100;
+      padding: 10px 15px;
+
+      .aims-title {
+        flex: 1 0 auto;
+        font-size: 1.2em;
+        font-weight: 500;
+      }
+
+      .aims-actions {
+        flex: 0 1 auto;
+      }
+    }
+
+    .aims-section-content {
+      flex: 1 0 auto;
+      padding: 15px;
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    i.material-icons {
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+
   .aims-map-side-bar {
     flex: 1;
     flex-direction: column;
@@ -28,11 +64,6 @@ $ui-default-spacing: 5px;
     @include media-breakpoint-up(md) {
       width: 350px;
       max-width: 350px;
-
-      i.material-icons {
-        font-size: 18px;
-        line-height: 24px;
-      }
     }
 
     div {
@@ -67,6 +98,8 @@ $ui-default-spacing: 5px;
     .aims-map-row-panel {
       flex: 0 1 auto;
       flex-direction: row;
+      align-items: stretch;
+
       max-width: 720px;
       width: 100%;
 
@@ -91,8 +124,14 @@ $ui-default-spacing: 5px;
         border: none;
       }
 
+      .aims-section-header,
+      .aims-section-content,
+      .aims-actions {
+        min-height: 35px;
+      }
+
       .aims-section-header {
-        display: inline-block;
+        order: 1;
         padding: $ui-default-spacing $ui-default-spacing $ui-default-spacing 2*$ui-default-spacing;
         border: 0;
 
@@ -102,25 +141,40 @@ $ui-default-spacing: 5px;
       }
 
       .aims-section-content {
-        display: inline-block;
-        flex: 1;
+        order: 2;
+        flex: 1 1 auto;
+
         padding: $ui-default-spacing 2*$ui-default-spacing $ui-default-spacing $ui-default-spacing;
         overflow-y: auto;
       }
 
       .aims-actions {
-        width: auto;
+        align-self: flex-start;
+        order: 3;
 
         button.btn-link {
           padding: 0.25rem 0.75rem;
         }
+      }
+    }
 
-        @include media-breakpoint-up(md) {
+    @include media-breakpoint-down(md) {
+      .aims-map-row-panel {
+        flex-wrap: wrap;
 
-          i.material-icons {
-            font-size: 18px;
-            line-height: 24px;
-          }
+        .aims-section-header {
+          flex: 1;
+          order: 1;
+        }
+
+        .aims-actions {
+          order: 2;
+          background: $gray-100;
+        }
+
+        .aims-section-content {
+          order: 3;
+          width: 100%;
         }
       }
     }
