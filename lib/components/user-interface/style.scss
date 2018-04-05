@@ -77,10 +77,12 @@ $ui-default-spacing: 5px;
       display: none;
 
       &.top {
+        order: 1;
         margin-bottom: auto;
       }
 
       &.bottom {
+        order: 2;
         margin-top: auto;
       }
 
