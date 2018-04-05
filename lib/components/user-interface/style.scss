@@ -19,8 +19,7 @@ $ui-default-spacing: 5px;
 
       .aims-title {
         flex: 1 0 auto;
-        font-size: 1.2em;
-        font-weight: 500;
+        margin-bottom: 0;
       }
 
       .aims-actions {
@@ -136,7 +135,7 @@ $ui-default-spacing: 5px;
         border: 0;
 
         .aims-title {
-          font-size: 1em;
+          display: inline;
         }
       }
 
