@@ -43,17 +43,22 @@ button {
   ------------------
 */
 
-.aims-section .aims-section-header {
-  display: flex;
+.aims-section {
+  .aims-section-header {
+    display: flex;
+    flex: 0 0 auto;
 
-  .aims-title {
-    flex-shrink: 1;
-    flex-grow: 1;
+    .aims-title {
+      flex: 1 0 auto;
+    }
+
+    .aims-actions {
+      flex: 0 1 auto;
+    }
   }
 
-  .aims-actions {
-    flex-shrink: 0;
-    flex-grow: 0;
+  .aims-section-content {
+    flex: 1 0 auto;
   }
 }
 
