@@ -48,7 +48,8 @@ $ui-default-spacing: 5px;
     flex: 1;
     flex-direction: column;
 
-    height: 100%;
+    width: 350px;
+    max-width: 350px;
     overflow: auto;
     background-color: #ffffff;
     padding: 2px;
@@ -60,9 +61,14 @@ $ui-default-spacing: 5px;
       vertical-align: text-bottom;
     }
 
-    @include media-breakpoint-up(md) {
-      width: 350px;
-      max-width: 350px;
+    @include media-breakpoint-down(sm) {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      max-width: 100%;
     }
 
     div {
@@ -94,6 +100,18 @@ $ui-default-spacing: 5px;
 
     margin: 0 $ui-default-spacing;
 
+    @include media-breakpoint-down(sm) {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+    }
+
     .aims-map-row-panel {
       flex: 0 1 auto;
       flex-direction: row;
@@ -101,6 +119,12 @@ $ui-default-spacing: 5px;
 
       max-width: 720px;
       width: 100%;
+
+      @include media-breakpoint-down(sm) {
+        width: 100%;
+        max-width: 100%;
+        overflow-y: auto;
+      }
 
       max-height: 100%;
       background: #ffffff;
@@ -111,11 +135,25 @@ $ui-default-spacing: 5px;
       &.top {
         order: 1;
         margin-bottom: auto;
+
+        @include media-breakpoint-down(sm) {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+        }
       }
 
       &.bottom {
         order: 2;
         margin-top: auto;
+
+        @include media-breakpoint-down(sm) {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+        }
       }
 
       button.btn-link {
@@ -157,7 +195,7 @@ $ui-default-spacing: 5px;
       }
     }
 
-    @include media-breakpoint-down(md) {
+    @include media-breakpoint-down(sm) {
       .aims-map-row-panel {
         flex-wrap: wrap;
 
