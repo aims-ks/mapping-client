@@ -135,25 +135,11 @@ $ui-default-spacing: 5px;
       &.top {
         order: 1;
         margin-bottom: auto;
-
-        @include media-breakpoint-down(sm) {
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-        }
       }
 
       &.bottom {
         order: 2;
         margin-top: auto;
-
-        @include media-breakpoint-down(sm) {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
-        }
       }
 
       button.btn-link {
