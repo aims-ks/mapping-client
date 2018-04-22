@@ -31,13 +31,9 @@ button {
  Legend
  */
 .aims-map-legend {
-  max-height: 85%;
-  max-width: 250px;
   overflow-y: auto;
 
   .legend-item {
-    margin: 0 2em 5px 1px;
-
     .legend-title {
       margin-bottom: 5px;
     }
