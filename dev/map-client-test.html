@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+    <title>Test Mapping Client Library</title>
+
+    <script src="./../build/aims-map-alldeps.js?p3nft9"></script>
+    <!--<script src="http://eatlas.local/sites/all/libraries/mapping-client/js/aims-map-alldeps.js?p7zfp5"></script>-->
+
+    <style>
+        html, body, .map_client {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="map_client" id="map_div_id" style="position: relative;"></div>
+
+<script>
+
+  (function () {
+
+    let mapClientDiv = document.getElementsByClassName('map_client')[0];
+    let mapConfig = {
+      'layers': [
+        {
+        'id': 'ea_ea-be:World_Bright-Earth-e-Atlas-basemap',
+        'visible': true,
+        'style': ''
+        },
+        // {
+        //   'id': 'ea_ea:GBR_UQ_Inshore-pesticides_AvDryPSHeq-2010-11',
+        //   'visible': true,
+        //   'style': ''
+        // },
+        // {
+        //   'id': 'aims_aims:latestReadingsAirTemp',
+        //   'visible': true,
+        //   'style': ''
+        // },
+        {
+          'id': 'ea_ea:AU_MTSRF-JCU_WS-Outbreak_Likelihood_2002',
+          'visible': true,
+          'style': ''
+        },
+        // {
+        //   'id': 'ea_ea:GBR_AIMS_BRUVS_Sites',
+        //   'visible': true,
+        //   'style': ''
+        // }
+      ],
+      'zoom': '7',
+      'centre': {
+        'longitude': 151.07373,
+        'latitude': -20.53766
+      },
+      'projection': 'EPSG:4326',
+      'configHost': 'maps.eatlas.org.au',
+      'configURL': 'config\/main.json',
+      'showButtonOpenMapUrl': false,
+      'disableLegend': false,
+      'disableShowLayers': false,
+      'disableAddLayers': false,
+      'disableFeatureRequests': false,
+      'featureRequestsResultsPosition': 'right',
+      'featureRequestsWmsParams': {
+        BUFFER: 20,
+        FEATURE_COUNT: 1
+      },
+      'defaultActiveComponent': 'legend'
+    };
+
+
+    let mapClient = new aimsMap.MapClient(mapClientDiv.id, {
+      projection: mapConfig.projection,
+      centre: mapConfig.centre,
+      zoom: mapConfig.zoom,
+      mapConfigHost: mapConfig.configHost,
+      mapConfigURL: mapConfig.configUrl,
+      disableLegend: mapConfig.disableLegend,
+      disableShowLayers: mapConfig.disableShowLayers,
+      disableAddLayers: mapConfig.disableAddLayers,
+      disableFeatureRequests: mapConfig.disableFeatureRequests,
+      featureRequestsResultsPosition: mapConfig.featureRequestsResultsPosition,
+      featureRequestsWmsParams: mapConfig.featureRequestsWmsParams,
+      defaultActiveComponent: mapConfig.defaultActiveComponent
+    });
+
+    mapClient.init()
+      .then(function () {
+        // add layers
+        let baseLayersAPI = mapClient.getBaseLayersAPI();
+        mapConfig.layers.forEach(function(layer) {
+          baseLayersAPI.addAvailableLayer(layer.id);
+          if (layer.visible) {
+            baseLayersAPI.addActiveLayer(layer.id);
+          }
+        });
+
+        let overlayLayersAPI = mapClient.getOverlayLayersAPI();
+        mapConfig.layers.forEach(function(layer) {
+          overlayLayersAPI.setLayerStyle(layer.id, layer.style);
+          overlayLayersAPI.addAvailableLayer(layer.id);
+
+          if (layer.visible) {
+            overlayLayersAPI.addActiveLayer(layer.id);
+          }
+        });
+
+        // overlayLayersAPI.insertAvailableLayer('ea_ea:AU_GA_AMB_cs_poly', 1);
+        // overlayLayersAPI.addActiveLayer('ea_ea:AU_GA_AMB_cs_poly');
+
+        // let eventListenerApi = mapClient.getEventListenerAPI();
+        // eventListenerApi.registerMapSingleClickListener(function() {
+        //   this.preventDefault();
+        //   console.log('override map single click listener', this);
+        // })
+
+        // Enable/Disable model rendering.
+        const showLayersDialogAPI = mapClient.getShowLayersDialogAPI();
+        let showData = true;
+        showLayersDialogAPI.addToggleOption('Show data', showData, function() {
+          showData = !showData;
+          if (showData) {
+            alert('Show data');
+          } else {
+            alert('Hide data');
+          }
+        });
+      })
+      .then(function () {
+        // add controls
+        let userInterfaceAPI = mapClient.getUserInterfaceAPI();
+        let alertButton = userInterfaceAPI.getLeftControlsPanel().createButton(
+          'alert-button',
+          'Alert Button',
+          'add_alert'
+        );
+        alertButton.on(alertButton.EVENT_CLICKED, () => alert('hello'));
+
+        let expandButton = mapClient.getUserInterfaceAPI().getRightControlsPanel().createButton(
+          'open_map_fullscreen',
+          'Open map to full extent',
+          'fullscreen',
+          true,
+          'top'
+        );
+
+        expandButton.on(expandButton.EVENT_CLICKED, function() {
+          mapClientDiv.style('height: 90vh;');
+          mapClient.getOlMap().updateSize();
+        });
+      })
+      .then(function() {
+        // add controls
+        let userInterfaceAPI = mapClient.getUserInterfaceAPI();
+        // userInterfaceAPI.getTopRowPanel().showPanel('Top Row Panel', [], '<p>Content for the top row.</p>');
+        // userInterfaceAPI.getBottomRowPanel().showPanel('Bottom Row Panel', [], '<p>Content for the top row.</p>');
+        // userInterfaceAPI.getLeftSideBar().showPanel('Left Side Bar', [], '<p>Content for the left side bar.</p>')
+
+        // userInterfaceAPI.getLeftSideBar().showPanel('Left Side Bar', [], '<p>Content</p>');
+        // // add zoom controls to left control panel
+        // const zoomControls = $target.find('.ol-zoom.ol-unselectable.ol-control');
+        // userInterfaceAPI.getLeftControlsPanel()
+        //   .addOLControl(zoomControls);
+        //
+        // userInterfaceAPI.getTopRowPanel().showPanel('Top Row', [], '<p>Content</p>');
+        // userInterfaceAPI.getBottomRowPanel().showPanel('Bottom Row', [], '<p>Content</p>');
+        //
+        // userInterfaceAPI.getRightSideBar().showPanel('Right Side Bar', [], '<p>Content</p>');
+        // userInterfaceAPI.getRightControlsPanel().createButton(
+        //   'aims-map-show-layers-button',
+        //   'Layers',
+        //   'layers',
+        //   true
+        // );
+      });
+  })();
+
+</script>
+
+
+</body>
+</html>

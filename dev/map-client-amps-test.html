@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+    <title>Test Mapping Client Library</title>
+
+    <script src="./../build/aims-map-alldeps.js?p3nft9"></script>
+
+    <style>
+        html, body, .map_client {
+            margin: 0;
+            padding: 0;
+        }
+
+        .map_client {
+            height: 50vh;
+        }
+
+        #wrapper {
+            padding: 1em 0 0 0;
+        }
+        #wrapper, .page-content_full-width, .region-header .pagewidth {
+            width: 1400px;
+        }
+        #wrapper {
+            overflow: visible;
+            color: #113a5f;
+            margin-bottom: 0;
+        }
+        #wrapper {
+            background-color: #FFFFFF;
+            margin: 0 auto 2em auto;
+            overflow: auto;
+        }
+
+
+        /***************************************************************************************************/
+        /* START: styles for amps */
+        /***************************************************************************************************/
+        .aims-map-row-panel.bottom .aims-section-header {
+            display: none;
+        }
+
+        .aims-map-row-panel.bottom .aims-section-content .aims-map-get-feature-info-title {
+            display: none;
+        }
+
+        .aims-map-row-panel.bottom .aims-section-content .aims-map-get-features div.aims-map-get-features-container {
+            border-bottom: 0;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        @media (max-width: 767.98px) {
+            .aims-map-ui-container .aims-map-ui-row-container .aims-map-row-panel {
+                flex-wrap: nowrap;
+            }
+
+            .aims-map-ui-container .aims-map-ui-row-container .aims-map-row-panel .aims-section-content {
+                width: auto;
+                order: 1;
+            }
+            .aims-map-ui-container .aims-map-ui-row-container .aims-map-row-panel .aims-actions {
+                background: inherit;
+            }
+        }
+        /***************************************************************************************************/
+        /* END: styles for amps */
+        /***************************************************************************************************/
+
+
+    </style>
+</head>
+<body>
+
+<div class="map_client" id="map_div_id" style="position: relative;"></div>
+
+<script>
+
+  (function () {
+
+    let mapClientDiv = document.getElementsByClassName('map_client')[0];
+    let mapConfig = {
+      "layers":[
+        {
+          "id": "ea_ea-be:World_Bright-Earth-e-Atlas-basemap",
+          "visible":true,
+          "style":""
+        },
+        {
+          'id': 'cmr_cmr:LOCAL_GA_bathymetry_gifford_hillshade',
+          'visible': true,
+          'style': ''
+        },
+        {
+          'id': 'cmr_cmr:AU_DOEE_Bathomes_2011',
+          'visible': true,
+          'style': ''
+        },
+        // {
+        //   "id":"cmr_cmr:AU_DOEE_imcra4_prov_2006",
+        //   "visible":true,
+        //   "style":""
+        // },
+        // {
+        //   "id":"cmr_cmr:AU_DOEE_CMR_Network_line_2014",
+        //   "visible":true,
+        //   "style":""
+        // },
+        // {
+        //   "id":"cmr_cmr:AU_GA_warmingRates_2003_2016",
+        //   "visible":true,
+        //   "style":""
+        // }
+      ],
+      "zoom":"5",
+      "centre": {
+        "longitude":136.39502,
+        "latitude":-27.50243
+      },
+      "projection":"EPSG:4326",
+      "configHost":"maps.marineparks.eatlas.org.au",
+      "configURL":"config\/main.json",
+      "disableLegend":false,
+      "disableShowLayers":false,
+      "disableAddLayers":false,
+      'disableFeatureRequests': false,
+      'featureRequestsResultsPosition': 'bottom',
+      "bbox": {
+        "latMax":-9.65559,
+        "lonMax":158.76099,
+        "latMin":-24.49841,
+        "lonMin":144,
+        "projection":"EPSG:4326"
+      },
+      'defaultActiveComponent': 'legend'
+    };
+
+    let mapClient = new aimsMap.MapClient(mapClientDiv.id, {
+      projection: mapConfig.projection,
+      centre: mapConfig.centre,
+      zoom: mapConfig.zoom,
+      mapConfigHost: mapConfig.configHost,
+      mapConfigURL: mapConfig.configUrl,
+      disableLegend: mapConfig.disableLegend,
+      disableShowLayers: mapConfig.disableShowLayers,
+      disableAddLayers: mapConfig.disableAddLayers,
+      disableFeatureRequests: mapConfig.disableFeatureRequests,
+      featureRequestsResultsPosition: mapConfig.featureRequestsResultsPosition,
+      defaultActiveComponent: mapConfig.defaultActiveComponent
+    });
+
+    mapClient.init()
+      .then(function () {
+        // add layers
+        let baseLayersAPI = mapClient.getBaseLayersAPI();
+        mapConfig.layers.forEach(function(layer) {
+          baseLayersAPI.addAvailableLayer(layer.id);
+          if (layer.visible) {
+            baseLayersAPI.addActiveLayer(layer.id);
+          }
+        });
+
+        let overlayLayersAPI = mapClient.getOverlayLayersAPI();
+        mapConfig.layers.forEach(function(layer) {
+          overlayLayersAPI.setLayerStyle(layer.id, layer.style);
+          overlayLayersAPI.addAvailableLayer(layer.id);
+
+          if (layer.visible) {
+            overlayLayersAPI.addActiveLayer(layer.id);
+          }
+        });
+      });
+  })();
+
+</script>
+
+<div id="wrapper">
+    <div id="container">
+
+        <a id="main-content"></a>
+        <div id="tabs-wrapper" class="clearfix">
+        </div>
+
+
+
+
+        <div id="page-content" class="page-content_full-width">
+            <h1 class="page-title">Bioregions</h1>
+
+            <div class="region region-content">
+                <div id="block-system-main" class="block block-system">
+
+
+                    <div class="content">
+                        <div id="node-27199" class="node node-article node-promoted clearfix" about="/node/27199" typeof="sioc:Item foaf:Document">
+
+
+                            <span property="dc:title" content="Bioregions" class="rdf-meta element-hidden"></span>
+
+                            <div class="content">
+
+                                <div class="field field-name-field-preview field-type-file field-label-hidden">
+                                </div>
+                                <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+                                    <div class="field-items">
+                                        <div class="field-item even" property="content:encoded"> <p>Australian's marine jurisdiction is divided into areas of ocean with broadly similar characteristics based on the distribution of marine species and seafloor features. These areas are called bioregions, and the Australian marine parks network is designed such that it represents examples of the&nbsp;ecosystems, species and habitats&nbsp;within each of the bioregions. The map above depicts Australia's bioregions, as defined by the Integrated Marine and Coastal Regionalisation of Australia (<a href="http://www.environment.gov.au/node/18075" target="_blank">IMCRA</a> v4.0).</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+
+    </div> <!-- /#container -->
+</div>
+</body>
+</html>

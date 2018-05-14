@@ -8,5 +8,3 @@ node_modules/
 # output
 build/
 
-# temp testing files
-tmp/
