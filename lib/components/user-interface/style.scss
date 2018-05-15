@@ -143,6 +143,7 @@ $ui-default-spacing: 5px;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    overflow: auto;
 
     margin: 0 $ui-default-spacing;
 

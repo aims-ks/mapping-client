@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
     <title>Test Mapping Client Library</title>
 
-    <script src="./../build/aims-map-alldeps.js?p3nft9"></script>
+    <script src="./../build/aims-map-alldeps.js?p3nft12"></script>
 
     <style>
         html, body, .map_client {
@@ -98,6 +98,11 @@
           'visible': true,
           'style': ''
         },
+        {
+          'id': 'cmr_cmr:AU_DOEE_bia_2016_Dugong',
+          'visible': true,
+          'style': ''
+        },
         // {
         //   "id":"cmr_cmr:AU_DOEE_imcra4_prov_2006",
         //   "visible":true,
@@ -171,6 +176,9 @@
             overlayLayersAPI.addActiveLayer(layer.id);
           }
         });
+
+        let userInterfaceAPI = mapClient.getUserInterfaceAPI();
+        userInterfaceAPI.getBottomRowPanel().showPanel('Bottom Row Panel', [], '<p style="white-space: nowrap">Some long text. Some long text. Some long text. Some long text. Some long text. Some long text. Some long text. Some long text. Some long text. Some long text. Some long text. Some long text. Some long text. Some long text. Some long text. Some long text. Some long text. Some long text. Some long text. Some long text. Some long text. Some long text. Some long text. Some long text. Some long text. Some long text. Some long text. Some long text. Some long text. Some long text. Some long text. Some long text. Some long text. Some long text. Some long text. Some long text. Some long text. Some long text. Some long text. Some long text. Some long text. Some long text. Some long text. Some long text. Some long text. Some long text. Some long text. Some long text.</p>');
       });
   })();
 
