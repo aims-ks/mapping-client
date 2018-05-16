@@ -55,7 +55,7 @@
 export default class WikiFormatter {
 
 	constructor() {
-    this.MAX_URL_LENGTH = 40;
+    this.MAX_URL_LENGTH = 35;
 	}
 
 	/**
