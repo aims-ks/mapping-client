@@ -102,7 +102,7 @@
 
         let overlayLayersAPI = mapClient.getOverlayLayersAPI();
         mapConfig.layers.forEach(function(layer) {
-          overlayLayersAPI.setLayerStyle(layer.id, layer.style);
+          overlayLayersAPI.setLayerProperty(layer.id, 'style', layer.style);
           overlayLayersAPI.addAvailableLayer(layer.id);
 
           if (layer.visible) {
