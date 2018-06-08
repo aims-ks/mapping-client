@@ -46,11 +46,11 @@
           'visible': true,
           'style': ''
         },
-        // {
-        //   'id': 'ea_ea:GBR_AIMS_BRUVS_Sites',
-        //   'visible': true,
-        //   'style': ''
-        // }
+        {
+          'id': 'ea_ea:GBR_AIMS_BRUVS_Sites',
+          'visible': true,
+          'style': ''
+        }
       ],
       'zoom': '7',
       'centre': {
@@ -63,6 +63,7 @@
       'showButtonOpenMapUrl': false,
       'disableLegend': false,
       'disableShowLayers': false,
+      'disableMetadata': false,
       'disableAddLayers': false,
       'disableFeatureRequests': false,
       'featureRequestsResultsPosition': 'right',
@@ -82,6 +83,7 @@
       mapConfigURL: mapConfig.configUrl,
       disableLegend: mapConfig.disableLegend,
       disableShowLayers: mapConfig.disableShowLayers,
+      disableMetadata: mapConfig.disableMetadata,
       disableAddLayers: mapConfig.disableAddLayers,
       disableFeatureRequests: mapConfig.disableFeatureRequests,
       featureRequestsResultsPosition: mapConfig.featureRequestsResultsPosition,
@@ -145,12 +147,16 @@
           'open_map_fullscreen',
           'Open map to full extent',
           'fullscreen',
-          true,
+          false,
           'top'
         );
 
         expandButton.on(expandButton.EVENT_CLICKED, function() {
-          mapClientDiv.style('height: 90vh;');
+          if (mapClientDiv.style.height !== '90vh') {
+            mapClientDiv.style.height = '90vh';
+          } else {
+            mapClientDiv.style.height = '50vh';
+          }
           mapClient.getOlMap().updateSize();
         });
       })
@@ -182,6 +188,32 @@
 
 </script>
 
+<p>Make the page very long.</p>
+<p>Make the page very long.</p>
+<p>Make the page very long.</p>
+<p>Make the page very long.</p>
+<p>Make the page very long.</p>
+<p>Make the page very long.</p>
+<p>Make the page very long.</p>
+<p>Make the page very long.</p>
+<p>Make the page very long.</p>
+<p>Make the page very long.</p>
+<p>Make the page very long.</p>
+<p>Make the page very long.</p>
+<p>Make the page very long.</p>
+<p>Make the page very long.</p>
+<p>Make the page very long.</p>
+<p>Make the page very long.</p>
+<p>Make the page very long.</p>
+<p>Make the page very long.</p>
+<p>Make the page very long.</p>
+<p>Make the page very long.</p>
+<p>Make the page very long.</p>
+<p>Make the page very long.</p>
+<p>Make the page very long.</p>
+<p>Make the page very long.</p>
+<p>Make the page very long.</p>
+<p>Make the page very long.</p>
 
 </body>
 </html>
