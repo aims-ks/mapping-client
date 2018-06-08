@@ -114,13 +114,6 @@ $ui-default-spacing: 5px;
     }
   }
 
-  @include media-breakpoint-up(md) {
-    i.material-icons {
-      font-size: 18px;
-      line-height: 24px;
-    }
-  }
-
   .aims-map-side-bar {
     flex: 1;
     flex-direction: column;
