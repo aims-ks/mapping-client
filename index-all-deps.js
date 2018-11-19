@@ -15,7 +15,7 @@ import AbstractDynamicLayerStyleSelector from './lib/layers/dynamic/dynamic-laye
 export { AbstractDynamicLayerStyleSelector };
 
 import {
-  DynamicLayersFeatureSelector,
+  DynamicLayerFeatureSelector,
   AccumulatingDynamicLayersFeatureSelector,
   ToggleDynamicLayersFeatureSelector
 } from "./lib/layers/dynamic/dynamic-layers-feature-selector";
@@ -24,8 +24,8 @@ export {
   ToggleDynamicLayersFeatureSelector
 };
 
-import DynamicLayersRenderManager from './lib/layers/dynamic/dynamic-layers-render-manager';
-export { DynamicLayersRenderManager };
+import DynamicLayerRenderer from './lib/layers/dynamic/dynamic-layers-renderer';
+export { DynamicLayerRenderer };
 
 import StaticLayersRenderManager from './lib/layers/static/static-layers-render-manager';
 export { StaticLayersRenderManager };

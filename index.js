@@ -11,21 +11,21 @@ export { MapClient };
 import AbstractLegendBuilder from './lib/components/legend/abstract-legend-builder';
 export { AbstractLegendBuilder };
 
-import AbstractDynamicLayerStyleSelector from './lib/layers/dynamic/dynamic-layer-style-selector';
-export { AbstractDynamicLayerStyleSelector };
-
 import {
-  DynamicLayersFeatureSelector,
-  AccumulatingDynamicLayersFeatureSelector,
-  ToggleDynamicLayersFeatureSelector
-} from "./lib/layers/dynamic/dynamic-layers-feature-selector";
+  DynamicLayerFeatureSelector,
+  AccumulatingDynamicLayerFeatureSelector,
+  ToggleDynamicLayerFeatureSelector
+} from "./lib/layers/dynamic/dynamic-layer-feature-selector";
 export {
-  AccumulatingDynamicLayersFeatureSelector,
-  ToggleDynamicLayersFeatureSelector
+  AccumulatingDynamicLayerFeatureSelector,
+  ToggleDynamicLayerFeatureSelector
 };
 
-import DynamicLayersRenderManager from './lib/layers/dynamic/dynamic-layers-render-manager';
-export { DynamicLayersRenderManager };
+import AbstractDynamicLayerFeatureStyler from './lib/layers/dynamic/dynamic-layer-feature-styler';
+export { AbstractDynamicLayerFeatureStyler };
+
+import DynamicLayerRenderer from './lib/layers/dynamic/dynamic-layer-renderer';
+export { DynamicLayerRenderer };
 
 import StaticLayersRenderManager from './lib/layers/static/static-layers-render-manager';
 export { StaticLayersRenderManager };
