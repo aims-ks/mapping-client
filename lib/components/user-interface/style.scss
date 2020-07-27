@@ -312,7 +312,7 @@ $ui-default-spacing: 5px;
     }
 
     .ol-control {
-      position: unset;
+      position: inherit;
       margin-bottom: $ui-default-spacing;
       pointer-events: auto;
 
