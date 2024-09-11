@@ -4,8 +4,8 @@ const webpack = require('webpack');
 const factory = require('./webpack.config.factory');
 
 let config = factory({
-  libraryName: 'aimsMap',
-  filename: 'aims-map-withdeps.js',
+  libraryName: 'mappingClient',
+  filename: 'mapping-client-withdeps.js',
   umdNamedDefine: true,
   externals: {
     jquery: 'jQuery'

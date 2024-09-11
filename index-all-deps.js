@@ -1,7 +1,7 @@
 /**
  * Package of map-related functionality.
  *
- * @module aims-map
+ * @module mapping-client
  */
 
 // Make classes available.
@@ -16,13 +16,13 @@ export { AbstractDynamicLayerStyleSelector };
 
 import {
   DynamicLayerFeatureSelector,
-  AccumulatingDynamicLayersFeatureSelector,
-  ToggleDynamicLayersFeatureSelector
+  AccumulatingDynamicLayerFeatureSelector,
+  ToggleDynamicLayerFeatureSelector
 } from "./lib/layers/dynamic/dynamic-layer-feature-selector";
 export {
   DynamicLayerFeatureSelector,
-  AccumulatingDynamicLayersFeatureSelector,
-  ToggleDynamicLayersFeatureSelector
+  AccumulatingDynamicLayerFeatureSelector,
+  ToggleDynamicLayerFeatureSelector
 };
 
 import DynamicLayerRenderer from './lib/layers/dynamic/dynamic-layer-renderer';
@@ -32,7 +32,9 @@ import StaticLayersRenderManager from './lib/layers/static/static-layers-render-
 export { StaticLayersRenderManager };
 
 // Include polyfills
-import 'babel-polyfill';
+//import 'babel-polyfill';
+import "core-js/stable";
+import "regenerator-runtime/runtime";
 
 // Include basic CSS
 import './lib/styles/app.scss'

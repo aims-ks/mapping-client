@@ -5,8 +5,8 @@ const webpack = require('webpack');
 const factory = require('./webpack.config.factory');
 
 let config = factory({
-  filename: 'aims-map-nodeps.js',
-  libraryName: 'aims-map-nodeps'
+  filename: 'mapping-client-nodeps.js',
+  libraryName: 'mapping-client-nodeps'
 });
 
 // Add an IgnorePlugin for each defined dependency.

@@ -3,10 +3,11 @@
 $blue:    #337ab7 !default;
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/maps";
 @import "~bootstrap/scss/mixins";
 @import "~bootstrap/scss/root";
 @import "~bootstrap/scss/images";
-@import "~bootstrap/scss/code";
+//@import "~bootstrap/scss/code";
 @import "~bootstrap/scss/grid";
 @import "~bootstrap/scss/tables";
 @import "~bootstrap/scss/forms";
@@ -14,18 +15,18 @@ $blue:    #337ab7 !default;
 @import "~bootstrap/scss/transitions";
 @import "~bootstrap/scss/dropdown";
 @import "~bootstrap/scss/button-group";
-@import "~bootstrap/scss/input-group";
-@import "~bootstrap/scss/custom-forms";
+@import "~bootstrap/scss/forms/input-group";
+//@import "~bootstrap/scss/custom-forms";
 @import "~bootstrap/scss/nav";
 @import "~bootstrap/scss/navbar";
 @import "~bootstrap/scss/card";
 @import "~bootstrap/scss/breadcrumb";
 @import "~bootstrap/scss/pagination";
 @import "~bootstrap/scss/badge";
-@import "~bootstrap/scss/jumbotron";
+//@import "~bootstrap/scss/jumbotron";
 @import "~bootstrap/scss/alert";
 @import "~bootstrap/scss/progress";
-@import "~bootstrap/scss/media";
+//@import "~bootstrap/scss/media";
 @import "~bootstrap/scss/list-group";
 @import "~bootstrap/scss/close";
 @import "~bootstrap/scss/modal";
@@ -33,7 +34,7 @@ $blue:    #337ab7 !default;
 @import "~bootstrap/scss/popover";
 @import "~bootstrap/scss/carousel";
 @import "~bootstrap/scss/utilities";
-@import "~bootstrap/scss/print";
+//@import "~bootstrap/scss/print";
 
 
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
@@ -52,18 +53,18 @@ button {
 /*
   Modal box overrides
 */
-#aims-map-add-layer-modal ul.nav {
+#mapping-client-add-layer-modal ul.nav {
   margin-top: 0;
 }
 
-#aims-map-add-layer-modal .tab-content {
+#mapping-client-add-layer-modal .tab-content {
   margin-top: 15px;
 }
 
 /*
  Legend
  */
-.aims-map-legend {
+.mapping-client-legend {
   .legend-item {
     .legend-title {
       margin-bottom: 5px;
@@ -78,7 +79,7 @@ button {
 /*
   Layer dialog
  */
-.aims-map-show-layers-dialog-content {
+.mapping-client-show-layers-dialog-content {
 
   .overlay-layers-list,
   .base-layers-list {
@@ -101,7 +102,7 @@ button {
         cursor: pointer;
       }
 
-      .aims-map-layer-settings-button {
+      .mapping-client-layer-settings-button {
         display: block;
         position: absolute;
         top: 0;
@@ -109,7 +110,7 @@ button {
         padding: 1px 0 1px 4px;
       }
 
-      .aims-map-layer-settings {
+      .mapping-client-layer-settings {
         padding: 4px 0;
 
         input::-ms-tooltip {

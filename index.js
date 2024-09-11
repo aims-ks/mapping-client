@@ -1,7 +1,7 @@
 /**
  * Package of map-related functionality.
  *
- * @module aims-map
+ * @module mapping-client
  */
 
 // Make classes available.

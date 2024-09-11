@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
     <title>Test Mapping Client Library</title>
 
-    <script src="./../build/aims-map-alldeps.js?p3nft13"></script>
+    <script src="./../build/mapping-client-alldeps.js?p3nft13"></script>
 
     <style>
         html, body, .map_client {
@@ -38,30 +38,30 @@
         /***************************************************************************************************/
         /* START: styles for amps */
         /***************************************************************************************************/
-        .aims-map-row-panel.bottom .aims-section-header {
+        .mapping-client-row-panel.bottom .aims-section-header {
             display: none;
         }
 
-        .aims-map-row-panel.bottom .aims-section-content .aims-map-get-feature-info-title {
+        .mapping-client-row-panel.bottom .aims-section-content .mapping-client-get-feature-info-title {
             display: none;
         }
 
-        .aims-map-row-panel.bottom .aims-section-content .aims-map-get-features div.aims-map-get-features-container {
+        .mapping-client-row-panel.bottom .aims-section-content .mapping-client-get-features div.mapping-client-get-features-container {
             border-bottom: 0;
             margin-bottom: 0;
             padding-bottom: 0;
         }
 
         @media (max-width: 767.98px) {
-            .aims-map-ui-container .aims-map-ui-row-container .aims-map-row-panel {
+            .mapping-client-ui-container .mapping-client-ui-row-container .mapping-client-row-panel {
                 flex-wrap: nowrap;
             }
 
-            .aims-map-ui-container .aims-map-ui-row-container .aims-map-row-panel .aims-section-content {
+            .mapping-client-ui-container .mapping-client-ui-row-container .mapping-client-row-panel .aims-section-content {
                 width: auto;
                 order: 1;
             }
-            .aims-map-ui-container .aims-map-ui-row-container .aims-map-row-panel .aims-actions {
+            .mapping-client-ui-container .mapping-client-ui-row-container .mapping-client-row-panel .aims-actions {
                 background: inherit;
             }
         }
@@ -144,7 +144,7 @@
       'defaultActiveComponent': 'legend'
     };
 
-    let mapClient = new aimsMap.MapClient(mapClientDiv.id, {
+    let mapClient = new mappingClient.MapClient(mapClientDiv.id, {
       projection: mapConfig.projection,
       centre: mapConfig.centre,
       zoom: mapConfig.zoom,

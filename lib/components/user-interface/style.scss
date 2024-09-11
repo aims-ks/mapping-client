@@ -1,6 +1,6 @@
 $ui-default-spacing: 5px;
 
-.aims-map-ui-container {
+.mapping-client-ui-container {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -80,13 +80,13 @@ $ui-default-spacing: 5px;
         margin: 0;
       }
 
-      div.aims-map-collapsible-element-container {
+      div.mapping-client-collapsible-element-container {
         border-bottom: 1px dashed $gray-300;
         margin-bottom: 10px;
         padding-bottom: 5px;
         overflow: auto;
 
-        .aims-map-collapsible-element-title {
+        .mapping-client-collapsible-element-title {
           margin-bottom: 5px;
 
           button {
@@ -102,7 +102,7 @@ $ui-default-spacing: 5px;
           }
         }
 
-        .aims-map-collapsible-element-content {
+        .mapping-client-collapsible-element-content {
           overflow: auto;
 
           &.loading {
@@ -113,7 +113,7 @@ $ui-default-spacing: 5px;
     }
   }
 
-  .aims-map-side-bar {
+  .mapping-client-side-bar {
     flex: 1;
     flex-direction: column;
 
@@ -160,7 +160,7 @@ $ui-default-spacing: 5px;
     }
   }
 
-  .aims-map-ui-row-container {
+  .mapping-client-ui-row-container {
     order: 3;
     flex: 1;
     display: flex;
@@ -183,7 +183,7 @@ $ui-default-spacing: 5px;
       margin: 0;
     }
 
-    .aims-map-row-panel {
+    .mapping-client-row-panel {
       flex: 0 1 auto;
       flex-direction: row;
       align-items: stretch;
@@ -253,7 +253,7 @@ $ui-default-spacing: 5px;
     }
 
     @include media-breakpoint-down(sm) {
-      .aims-map-row-panel {
+      .mapping-client-row-panel {
         flex-wrap: wrap;
 
         .aims-section-header {
@@ -274,7 +274,7 @@ $ui-default-spacing: 5px;
     }
   }
 
-  .aims-map-controls-panel {
+  .mapping-client-controls-panel {
     flex: 0 1 auto;
     flex-direction: column;
 

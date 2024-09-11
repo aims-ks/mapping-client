@@ -1,0 +1,29 @@
+services:
+  mapping_client:
+    # https://hub.docker.com/_/node
+    image: 'node:18.20.4'
+
+    container_name: mapping_client
+    volumes:
+      - ..:/home/node/app
+      # Set some aliases to enable colour with the ls command.
+      - ./bashrc:/root/.bashrc
+    environment:
+      # This variable has no effect with this app, but it's good practice to set it.
+      - NODE_ENV=development
+    # Make sure the container stays alive until it's manually killed
+    command:
+      - /bin/sh
+      - -c
+      - |
+        cd /home/node/app
+        npm install -g npm@10.8.3
+        npm install
+
+        echo "-----------------------------------"
+        echo "Docker Container Ready"
+        echo "-----------------------------------"
+        echo "Connect using the following command:"
+        echo "$$ docker exec -it mapping_client bash"
+        echo "# npm run build-alldeps"
+        sleep infinity

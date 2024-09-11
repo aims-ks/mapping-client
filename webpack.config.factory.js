@@ -69,7 +69,10 @@ module.exports = function (options) {
         },
         {
           test: /.(png|woff(2)?|eot|ttf|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-          loader: 'url-loader?limit=100000'
+          loader: 'url-loader',
+          options: {
+            limit: 100000
+          }
         },
         {
           test: /\.txt$/,

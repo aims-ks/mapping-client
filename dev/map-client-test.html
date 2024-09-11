@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
     <title>Test Mapping Client Library</title>
 
-    <script src="./../build/aims-map-alldeps.js?p3nft9"></script>
-    <!--<script src="http://eatlas.local/sites/all/libraries/mapping-client/js/aims-map-alldeps.js?p7zfp5"></script>-->
+    <script src="./../build/mapping-client-alldeps.js?p3nft9"></script>
+    <!--<script src="http://eatlas.local/sites/all/libraries/mapping-client/js/mapping-client-alldeps.js?p7zfp5"></script>-->
 
     <style>
         html, body, .map_client {
@@ -75,7 +75,7 @@
     };
 
 
-    let mapClient = new aimsMap.MapClient(mapClientDiv.id, {
+    let mapClient = new mappingClient.MapClient(mapClientDiv.id, {
       projection: mapConfig.projection,
       centre: mapConfig.centre,
       zoom: mapConfig.zoom,
@@ -178,7 +178,7 @@
         //
         // userInterfaceAPI.getRightSideBar().showPanel('Right Side Bar', [], '<p>Content</p>');
         // userInterfaceAPI.getRightControlsPanel().createButton(
-        //   'aims-map-show-layers-button',
+        //   'mapping-client-show-layers-button',
         //   'Layers',
         //   'layers',
         //   true

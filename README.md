@@ -1,4 +1,4 @@
-# AIMS-Map
+# Mapping client
 
 This component implements an event-driven, Open Layers map for the AIMS eAtlas mapping client, with
 configuration provided by the AIMS AtlasMapper service.
@@ -27,7 +27,7 @@ For `Base` and `Overlay` layers, the system supports the following states:
 - `Active`: A subset of references to Available layers, Active layers are those which are currently
         being rendered by the system.
 
-# API
+## API
 
 The following system interface references are available from the `MapClient`:
 
@@ -35,7 +35,7 @@ The following system interface references are available from the `MapClient`:
 - OverlayLayers
 - Legend
 
-## BaseLayers API / OverlayLayers API
+### BaseLayers API / OverlayLayers API
 
 These two (2) sub-systems are identical, differing only by whether they impact `Base` layers or 
 `Overlay` layers.
@@ -47,3 +47,16 @@ These two (2) sub-systems are identical, differing only by whether they impact `
 - getActiveLayers
 - addActiveLayer
 - removeActiveLayer
+
+## Compile
+
+```
+$ cd development-env
+$ docker compose up
+$ docker exec -it mapping_client bash
+# npm run build-alldeps
+```
+
+## Deploy
+
+???

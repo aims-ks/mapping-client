@@ -13,8 +13,8 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/openlayers/4.6.4/ol-debug.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/openlayers/4.6.4/ol-debug.css" media="all">
 
-    <script src="./../build/aims-map-withdeps.js?p3nft9"></script>
-    <!--<script src="http://localhost:63342/aims-map/build/aims-map-withdeps.js?p3nft9"></script>-->
+    <script src="./../build/mapping-client-withdeps.js?p3nft9"></script>
+    <!--<script src="http://localhost:63342/mapping-client/build/mapping-client-withdeps.js?p3nft9"></script>-->
 
 
     <style>
@@ -91,7 +91,7 @@
     //   },
     // ];
 
-    let mapClient = new aimsMap.MapClient(mapClientDiv.id, {
+    let mapClient = new mappingClient.MapClient(mapClientDiv.id, {
       projection: mapConfig.projection,
       centre: mapConfig.centre,
       zoom: mapConfig.zoom,
