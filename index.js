@@ -6,32 +6,26 @@
 
 // Make classes available.
 import MapClient from './lib/map-client';
-export { MapClient };
-
 import AbstractLegendBuilder from './lib/components/legend/abstract-legend-builder';
-export { AbstractLegendBuilder };
-
 import {
-  DynamicLayerFeatureSelector,
   AccumulatingDynamicLayerFeatureSelector,
-  ToggleDynamicLayerFeatureSelector
-} from "./lib/layers/dynamic/dynamic-layer-feature-selector";
+  ToggleDynamicLayerFeatureSelector,
+} from './lib/layers/dynamic/dynamic-layer-feature-selector';
+import AbstractDynamicLayerFeatureStyler from './lib/layers/dynamic/dynamic-layer-feature-styler';
+import DynamicLayerRenderer from './lib/layers/dynamic/dynamic-layer-renderer';
+import StaticLayersRenderManager from './lib/layers/static/static-layers-render-manager';
+// Include for polyfills
+import 'core-js/stable';
+import 'regenerator-runtime/runtime';
+// Include basic CSS
+import './lib/styles/app.scss';
+
+export { MapClient };
+export { AbstractLegendBuilder };
 export {
   AccumulatingDynamicLayerFeatureSelector,
-  ToggleDynamicLayerFeatureSelector
+  ToggleDynamicLayerFeatureSelector,
 };
-
-import AbstractDynamicLayerFeatureStyler from './lib/layers/dynamic/dynamic-layer-feature-styler';
 export { AbstractDynamicLayerFeatureStyler };
-
-import DynamicLayerRenderer from './lib/layers/dynamic/dynamic-layer-renderer';
 export { DynamicLayerRenderer };
-
-import StaticLayersRenderManager from './lib/layers/static/static-layers-render-manager';
 export { StaticLayersRenderManager };
-
-// Include polyfills
-import 'babel-polyfill';
-
-// Include basic CSS
-import './lib/styles/app.scss'
