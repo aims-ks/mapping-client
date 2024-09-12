@@ -4,14 +4,14 @@ const webpack = require('webpack');
 
 const factory = require('./webpack.config.factory');
 
-let config = factory({
+const config = factory({
   filename: 'mapping-client-nodeps.js',
-  libraryName: 'mapping-client-nodeps'
+  libraryName: 'mapping-client-nodeps',
 });
 
 // Add an IgnorePlugin for each defined dependency.
 Object.keys(require('./package.json').dependencies)
-  .forEach(lib => {
+  .forEach((lib) => {
     config.plugins.push(new webpack.IgnorePlugin(new RegExp(`\\b${lib}\\b`)));
   });
 

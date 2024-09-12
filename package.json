@@ -4,7 +4,7 @@
   "description": "Javascript library for rendering maps using OpenLayers library.",
   "main": "./index.js",
   "scripts": {
-    "lint": "node ./node_modules/eslint/bin/eslint.js ./index.js ./index-all-deps.js './lib/**/*.js'",
+    "lint": "node ./node_modules/eslint/bin/eslint.js './*.js' './lib/**/*.js'",
     "build-alldeps": "webpack --env WEBPACK_ENV=build --config webpack.config.all-deps.js",
     "build-nodeps": "webpack --env WEBPACK_ENV=build --config webpack.config.no-deps.js",
     "build-withdeps": "webpack --env WEBPACK_ENV=build --config webpack.config.with-deps.js",

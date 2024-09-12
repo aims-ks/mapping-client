@@ -3,16 +3,16 @@
 const webpack = require('webpack');
 const factory = require('./webpack.config.factory');
 
-let config = factory({
+const config = factory({
   libraryName: 'mappingClient',
   filename: 'mapping-client-withdeps.js',
   umdNamedDefine: true,
   externals: {
-    jquery: 'jQuery'
-  }
+    jquery: 'jQuery',
+  },
 });
 
 // Add an IgnorePlugin for OpenLayers.
-config.plugins.push(new webpack.IgnorePlugin(new RegExp(`\\bol\\b`)));
+config.plugins.push(new webpack.IgnorePlugin(/\bol\b/));
 
 module.exports = config;
