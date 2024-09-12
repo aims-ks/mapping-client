@@ -12,7 +12,9 @@ const config = factory({
 // Add an IgnorePlugin for each defined dependency.
 Object.keys(require('./package.json').dependencies)
   .forEach((lib) => {
-    config.plugins.push(new webpack.IgnorePlugin(new RegExp(`\\b${lib}\\b`)));
+    config.plugins.push(new webpack.IgnorePlugin({
+      resourceRegExp: new RegExp(`\\b${lib}\\b`),
+    }));
   });
 
 module.exports = config;

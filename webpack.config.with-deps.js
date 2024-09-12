@@ -13,6 +13,8 @@ const config = factory({
 });
 
 // Add an IgnorePlugin for OpenLayers.
-config.plugins.push(new webpack.IgnorePlugin(/\bol\b/));
+config.plugins.push(new webpack.IgnorePlugin({
+  resourceRegExp: /\bol\b/,
+}));
 
 module.exports = config;

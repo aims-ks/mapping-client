@@ -8,7 +8,7 @@
     "build-alldeps": "webpack --env WEBPACK_ENV=build --config webpack.config.all-deps.js",
     "build-nodeps": "webpack --env WEBPACK_ENV=build --config webpack.config.no-deps.js",
     "build-withdeps": "webpack --env WEBPACK_ENV=build --config webpack.config.with-deps.js",
-    "dev-all-deps": "webpack --env WEBPACK_ENV=dev --progress --colors --watch --config webpack.config.all-deps.js"
+    "dev-all-deps": "webpack --env WEBPACK_ENV=dev --progress --watch --config webpack.config.all-deps.js"
   },
   "author": "Gael Lafond (g.lafond@aims.gov.au)",
   "license": "CC-BY-4.0",
