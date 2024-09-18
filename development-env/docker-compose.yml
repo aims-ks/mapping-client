@@ -25,5 +25,6 @@ services:
         echo "-----------------------------------"
         echo "Connect using the following command:"
         echo "$$ docker exec -it mapping_client bash"
-        echo "# npm run build-alldeps"
+        echo "# npm run [script]"
+        echo "Available scripts: lint, build-alldeps, build-nodeps, build-withdeps, dev-all-deps"
         sleep infinity
