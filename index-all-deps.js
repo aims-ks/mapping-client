@@ -5,16 +5,14 @@
  */
 
 // Make classes available.
-import MapClient from './lib/map-client';
-import AbstractLegendBuilder from './lib/components/legend/abstract-legend-builder';
-import AbstractDynamicLayerStyleSelector from './lib/layers/dynamic/dynamic-layer-feature-styler';
-import {
-  DynamicLayerFeatureSelector,
-  AccumulatingDynamicLayerFeatureSelector,
-  ToggleDynamicLayerFeatureSelector,
-} from './lib/layers/dynamic/dynamic-layer-feature-selector';
-import DynamicLayerRenderer from './lib/layers/dynamic/dynamic-layer-renderer';
-import StaticLayersRenderManager from './lib/layers/static/static-layers-render-manager';
+import MapClient from './lib/MapClient';
+import AbstractLegendBuilder from './lib/components/legend/AbstractLegendBuilder';
+import AbstractDynamicLayerStyleSelector from './lib/layers/dynamic/AbstractDynamicLayerFeatureStyler';
+import DynamicLayerFeatureSelector from './lib/layers/dynamic/DynamicLayerFeatureSelector';
+import AccumulatingDynamicLayerFeatureSelector from './lib/layers/dynamic/AccumulatingDynamicLayerFeatureSelector';
+import ToggleDynamicLayerFeatureSelector from './lib/layers/dynamic/ToggleDynamicLayerFeatureSelector';
+import DynamicLayerRenderer from './lib/layers/dynamic/DynamicLayerRenderer';
+import StaticLayersRenderManager from './lib/layers/static/StaticLayersRenderManager';
 // Include for polyfills
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
@@ -26,10 +24,8 @@ import 'ol/ol.css';
 export { MapClient };
 export { AbstractLegendBuilder };
 export { AbstractDynamicLayerStyleSelector };
-export {
-  DynamicLayerFeatureSelector,
-  AccumulatingDynamicLayerFeatureSelector,
-  ToggleDynamicLayerFeatureSelector,
-};
+export { DynamicLayerFeatureSelector };
+export { AccumulatingDynamicLayerFeatureSelector };
+export { ToggleDynamicLayerFeatureSelector };
 export { DynamicLayerRenderer };
 export { StaticLayersRenderManager };
