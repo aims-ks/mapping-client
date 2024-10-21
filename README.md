@@ -59,4 +59,6 @@ $ docker exec -it mapping_client bash
 
 ## Deploy
 
-???
+```
+$ cp build/mapping-client-alldeps.js* /home/glafond/Desktop/projects/eAtlas-redesign/2023-migration/eatlas-modules/eatlas_layer_field/libraries/mapping-client
+```
